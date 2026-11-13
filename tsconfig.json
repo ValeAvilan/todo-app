@@ -1,20 +1,29 @@
 {
+  // Usa las opciones de TypeScript recomendadas por Expo como punto de partida.
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    // Activa reglas estrictas para detectar errores en los archivos TypeScript.
     "strict": true,
+    // Estos alias permiten escribir importaciones cortas en lugar de muchas rutas ../.
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@/assets/*": [
-        "./assets/*"
-      ]
+      "@/*": ["./src/*"],
+      "@/assets/*": ["./assets/*"],
+      "@/data/*": ["./data/*"],
+      "@/components/*": ["./components/*"],
+      "@/hooks/*": ["./hooks/*"],
+      "@/constants/*": ["./constants/*"],
+      "@/context/*": ["./context/*"]
+
     }
   },
+  // Indica dónde buscar archivos del proyecto y los tipos que genera Expo.
   "include": [
     "**/*.ts",
     "**/*.tsx",
+    "**/*.jsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+  ],
+  // example contiene la plantilla anterior, no el código de la app actual.
+  "exclude": ["node_modules", "example"]
 }
